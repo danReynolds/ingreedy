@@ -44,7 +44,7 @@ module Ingreedy
         parslet[:container_unit].to_s,
       ) if parslet[:container_unit]
 
-      result.ingredient = parslet[:ingredient].to_s.lstrip.rstrip # TODO: hack
+      result.ingredient = parslet[:ingredient].to_s.lstrip.rstrip unless parslet[:ingredient].kind_of?(Array) # TODO: hack
 
       result
     end
